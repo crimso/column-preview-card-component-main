@@ -1,0 +1,246 @@
+:root {
+
+    /**--Primary colors--*/
+    --primary-bright-orange: hsl(31, 77%, 52%);
+    --primary-dark-cyan: hsl(184, 100%, 22%);
+    --primary-very-dark-cyan: hsl(179, 100%, 13%);
+    /**--Neutral colors--*/
+    --neutral-transparent-white: hsla(0, 0%, 100%, 0.75);
+    --neutral-very-light-gray: hsl(0, 0%, 95%);
+}
+
+
+/*!--font-family: "Big Shoulders Display", sans-serif;--*/
+/*!--font-family: "Lexend Deca", sans-serif;--*/
+/*!--font size 15px--*/
+
+
+
+/**-----CSS reset start-----*/
+
+/** Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/** Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/** Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/** Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/** Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/** Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/** Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/** A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/** Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/** Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/** Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* * Anything that has been anchored to should have extra scroll margin*/
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/**-----CSS reset end-----*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 920px;
+    max-width: 100%;
+    height: 500px;
+    min-height: 100%;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(920px / 3);
+    height: 100%;
+    padding: 47px 48px;
+}
+
+img {
+    width: 63px;
+}
+
+h2 {
+    font-size: 2.6rem;
+    color: var(--neutral-very-light-gray);
+    font-family: "Big Shoulders Display", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+p {
+    padding-bottom: clamp(3.125rem, 23.571vw + -8.572rem, 5.188rem);
+    margin: 0;
+    color: var(--neutral-transparent-white);
+    line-height: 1.65;
+    font-size: 0.94rem;
+    font-family: "Lexend Deca", sans-serif;
+}
+
+.learn-more-btn {
+    font-size: 0.94rem;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-family: "Lexend Deca", sans-serif;
+    max-width: 148px;
+    width: 100%;
+    padding: 13px 5px;
+    border-radius: 30px;
+    background-color: var(--neutral-very-light-gray);
+    color: inherit;
+    cursor: pointer;
+}
+
+.learn-more-btn:hover {
+    color: var(--neutral-very-light-gray);
+    padding: 12px 4px;
+    border: 1px solid var(--neutral-very-light-gray);
+}
+
+.sedan {
+    color: var(--primary-bright-orange);
+    background-color: var(--primary-bright-orange);
+    border-radius: 10px 0 0 10px;
+}
+
+.sedan .learn-more-btn:hover {
+    background-color: var(--primary-bright-orange);
+}
+
+.suv {
+    color: var(--primary-dark-cyan);
+    background-color: var(--primary-dark-cyan);
+}
+
+.suv .learn-more-btn:hover {
+    background-color: var(--primary-dark-cyan);
+}
+
+.luxury {
+    color: var(--primary-very-dark-cyan);
+    background-color: var(--primary-very-dark-cyan);
+    border-radius: 0 10px 10px 0;
+}
+
+.luxury .learn-more-btn:hover {
+    background-color: var(--primary-very-dark-cyan);
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/**---Media--*/
+
+@media (max-width: 793px) {
+
+
+    main {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    section {
+        width: 95%;
+    }
+
+    h2 {
+        margin-block: 30px;
+    }
+
+    .sedan {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .luxury {
+        border-radius: 0 0 10px 10px;
+    }
+
+}
